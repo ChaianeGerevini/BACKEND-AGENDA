@@ -11,7 +11,7 @@ console.log(process.env.STRIPE_SECRET_KEY);import checkoutRoutes from "./routes/
 
 const app = express();
 
-// ✔️ CORS (ANTES DE TUDO)
+//  CORS (ANTES DE TUDO)
 app.use(
   cors({
     origin: process.env.CLIENT_URL,
