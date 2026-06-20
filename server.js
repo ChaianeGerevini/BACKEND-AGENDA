@@ -1,12 +1,14 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import checkoutRoutes from "./routes/checkout.js";
+
 
 dotenv.config();
 
 console.log("ENV COMPLETO:");
 console.log(process.env.CLIENT_URL);
-console.log(process.env.STRIPE_SECRET_KEY);import checkoutRoutes from "./routes/checkout.js";
+console.log(process.env.STRIPE_SECRET_KEY);
 
 
 const app = express();

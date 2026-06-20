@@ -25,20 +25,19 @@ router.post("/", async (req, res) => {
   });
 }
 
-    const session = await stripe.checkout.sessions.create({
-      mode: "subscription",
-      payment_method_types: ["card"],
-      line_items: [
-        {
-          price: planos[plano].priceId,
-          quantity: 1,
-        },
-      ],
-      customer_email: email,
-      metadata: { plano, userId },
-      success_url: "http://localhost:5173/dashboard?success=true",
-      cancel_url: "http://localhost:5173/dashboard?canceled=true",
-    });
+const session = await stripe.checkout.sessions.create({
+  mode: "subscription",
+  line_items: [
+    {
+      price: planos[plano].priceId,
+      quantity: 1,
+    },
+  ],
+  customer_email: email,
+  metadata: { plano, userId },
+  success_url: "https://agenda-inteligente-app-lovat.vercel.app/dashboard?success=true",
+  cancel_url: "https://agenda-inteligente-app-lovat.vercel.app/dashboard?canceled=true",
+});
 
     return res.json({ url: session.url });
 
