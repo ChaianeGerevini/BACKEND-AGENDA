@@ -16,7 +16,7 @@ const app = express();
 //  CORS (ANTES DE TUDO)
 app.use(
   cors({
-    origin: "https://agenda-inteligente-app-lovat.vercel.app",
+    origin: "https://agenda-inteligente-app-nine.vercel.app/",
         methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
