@@ -16,24 +16,16 @@ const app = express();
 //  CORS (ANTES DE TUDO)
 app.use(
   cors({
-    origin: (origin, callback) => {
-      if (!origin) return callback(null, true);
-
-      const allowed = [
-        "https://agenda-inteligente-app-lovat.vercel.app",
-        "https://agenda-inteligente-app-nine.vercel.app"
-      ];
-
-      if (allowed.includes(origin)) {
-        return callback(null, true);
-      }
-
-      return callback(new Error("CORS bloqueado"));
-    },
+    origin: [
+      "https://agenda-inteligente-app-lovat.vercel.app",
+      "https://agenda-inteligente-app-nine.vercel.app"
+    ],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+
+app.options("*", cors());
 // JSON
 app.use(express.json());
 
