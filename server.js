@@ -14,16 +14,14 @@ console.log(process.env.STRIPE_SECRET_KEY);
 const app = express();
 
 //  CORS (ANTES DE TUDO)
-app.use(
-  cors({
-    origin: [
-      "https://agenda-inteligente-app-lovat.vercel.app",
-      "https://agenda-inteligente-app-nine.vercel.app"
-    ],
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-  })
-);
+app.use(cors({
+  origin: [
+    "https://agenda-inteligente-app-lovat.vercel.app",
+    "https://agenda-inteligente-app-nine.vercel.app"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
 
 // JSON
 app.use(express.json());
