@@ -11,7 +11,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
 });
 
 const planos = {
-  premium: { priceId: "price_1Tj3omIaEQocziLMOfi8AD8o", name: "Premium" },
+  premium: { priceId: "price_1Tnla9IaEQocziLMhkwnPuSO", name: "Premium" },
 };
 
 router.post("/", async (req, res) => {
